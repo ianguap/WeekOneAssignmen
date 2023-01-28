@@ -28,34 +28,28 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+@Composable
+fun Greeting(name: String) {
+    Text(text = "$name")
+}
+fun main(args: Array<String>) {
+    val current = LocalDateTime.now()
+    println("Current Date and Time is: $current")
 
     @Composable
-    fun Greeting(name: String) {
-        Text(text = "$name")
-
-    }
-
-    fun main(args: Array<String>) {
-
+    fun main(args: LocalDateTime) {
         val current = LocalDateTime.now()
 
         println("Current Date and Time is: $current")
+    }
 
-        @Composable
-        fun main(args: LocalDateTime) {
-
-            val current = LocalDateTime.now()
-
-            println("Current Date and Time is: $current")
-        }
-
-        @Preview(showBackground = true)
-        @Composable
-        fun DefaultPreview() {
-            WeekOneAssignmentTheme {
-                Greeting("Ian Guapisaca")
-                main(current)
-            }
+    @Preview(showBackground = true)
+    @Composable
+    fun DefaultPreview() {
+        WeekOneAssignmentTheme {
+            Greeting("Ian Guapisaca")
+            main(current)
         }
     }
 }
