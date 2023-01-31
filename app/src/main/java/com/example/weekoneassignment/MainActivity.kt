@@ -11,7 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.weekoneassignment.ui.theme.WeekOneAssignmentTheme
+import java.sql.Time
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.util.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,27 +34,15 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun Greeting(name: String) {
-    Text(text = "$name")
+    Text(text = "$name " + LocalDateTime.now().toString())
 }
-fun main(args: Array<String>) {
-    val current = LocalDateTime.now()
-    println("Current Date and Time is: $current")
-
-    @Composable
-    fun main(args: LocalDateTime) {
-        val current = LocalDateTime.now()
-
-        println("Current Date and Time is: $current")
-    }
-
-    @Preview(showBackground = true)
+@Preview(showBackground = true)
     @Composable
     fun DefaultPreview() {
-        WeekOneAssignmentTheme {
-            Greeting("Ian Guapisaca")
-            main(current)
-        }
+    WeekOneAssignmentTheme {
+        Greeting("Ian Guapisaca")
     }
 }
+
 
 
